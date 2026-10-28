@@ -1,0 +1,301 @@
+{
+  "D_learning_curve": [
+    {
+      "train_programs": 5,
+      "train_decisions": 500,
+      "DT_F1": {
+        "decision_acc": 0.943429024690733,
+        "sentence_acc": 0.478,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 0.9910384284340034,
+        "sentence_acc": 0.538,
+        "conflict_acc": 0.9927631578947368
+      },
+      "DT_F3": {
+        "decision_acc": 0.9895701483469191,
+        "sentence_acc": 0.506,
+        "conflict_acc": 0.9927631578947368
+      },
+      "MLP_F3": {
+        "decision_acc": 0.9187720452972845,
+        "sentence_acc": 0.446,
+        "conflict_acc": 0.8854166666666666
+      }
+    },
+    {
+      "train_programs": 10,
+      "train_decisions": 990,
+      "DT_F1": {
+        "decision_acc": 0.9481714006041888,
+        "sentence_acc": 0.478,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 0.9939918653907819,
+        "sentence_acc": 0.602,
+        "conflict_acc": 0.9927631578947368
+      },
+      "DT_F3": {
+        "decision_acc": 0.993485561912477,
+        "sentence_acc": 0.58,
+        "conflict_acc": 0.9927631578947368
+      },
+      "MLP_F3": {
+        "decision_acc": 0.9872917826945471,
+        "sentence_acc": 0.472,
+        "conflict_acc": 0.9843201754385965
+      }
+    },
+    {
+      "train_programs": 25,
+      "train_decisions": 2749,
+      "DT_F1": {
+        "decision_acc": 0.9481545238215786,
+        "sentence_acc": 0.478,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 0.9980929235650515,
+        "sentence_acc": 0.794,
+        "conflict_acc": 1.0
+      },
+      "DT_F3": {
+        "decision_acc": 0.9975359897389162,
+        "sentence_acc": 0.762,
+        "conflict_acc": 1.0
+      },
+      "MLP_F3": {
+        "decision_acc": 0.9982279378259329,
+        "sentence_acc": 0.814,
+        "conflict_acc": 1.0
+      }
+    },
+    {
+      "train_programs": 50,
+      "train_decisions": 5781,
+      "DT_F1": {
+        "decision_acc": 0.950567903734832,
+        "sentence_acc": 0.492,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 0.9991899144347122,
+        "sentence_acc": 0.916,
+        "conflict_acc": 1.0
+      },
+      "DT_F3": {
+        "decision_acc": 0.9989030091303394,
+        "sentence_acc": 0.886,
+        "conflict_acc": 1.0
+      },
+      "MLP_F3": {
+        "decision_acc": 0.9997637250434577,
+        "sentence_acc": 0.972,
+        "conflict_acc": 1.0
+      }
+    },
+    {
+      "train_programs": 100,
+      "train_decisions": 12395,
+      "DT_F1": {
+        "decision_acc": 0.9507366715609337,
+        "sentence_acc": 0.492,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 0.9999831232173898,
+        "sentence_acc": 0.998,
+        "conflict_acc": 1.0
+      },
+      "DT_F3": {
+        "decision_acc": 0.9999324928695593,
+        "sentence_acc": 0.994,
+        "conflict_acc": 1.0
+      },
+      "MLP_F3": {
+        "decision_acc": 0.9999493696521695,
+        "sentence_acc": 0.994,
+        "conflict_acc": 1.0
+      }
+    },
+    {
+      "train_programs": 250,
+      "train_decisions": 30517,
+      "DT_F1": {
+        "decision_acc": 0.9507366715609337,
+        "sentence_acc": 0.492,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 0.9999831232173898,
+        "sentence_acc": 0.998,
+        "conflict_acc": 1.0
+      },
+      "DT_F3": {
+        "decision_acc": 0.9999831232173898,
+        "sentence_acc": 0.998,
+        "conflict_acc": 1.0
+      },
+      "MLP_F3": {
+        "decision_acc": 0.9999662464347797,
+        "sentence_acc": 0.996,
+        "conflict_acc": 1.0
+      }
+    },
+    {
+      "train_programs": 500,
+      "train_decisions": 58290,
+      "DT_F1": {
+        "decision_acc": 0.9507535483435438,
+        "sentence_acc": 0.492,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      },
+      "DT_F3": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      },
+      "MLP_F3": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      }
+    },
+    {
+      "train_programs": 2000,
+      "train_decisions": 245889,
+      "DT_F1": {
+        "decision_acc": 0.9507535483435438,
+        "sentence_acc": 0.492,
+        "conflict_acc": 0.6800438596491228
+      },
+      "DT_F2": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      },
+      "DT_F3": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      },
+      "MLP_F3": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      }
+    }
+  ],
+  "E_length_generalisation": {
+    "train_avg_decisions_per_program": 35.49,
+    "long_test_avg_decisions_per_program": 671.2333333333333,
+    "DT_F2": {
+      "short_test": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      },
+      "long_test": {
+        "decision_acc": 0.999970204101902,
+        "sentence_acc": 0.98,
+        "conflict_acc": 1.0
+      }
+    },
+    "DT_F3": {
+      "short_test": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      },
+      "long_test": {
+        "decision_acc": 0.999970204101902,
+        "sentence_acc": 0.98,
+        "conflict_acc": 1.0
+      }
+    },
+    "MLP_F3": {
+      "short_test": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0
+      },
+      "long_test": {
+        "decision_acc": 0.999970204101902,
+        "sentence_acc": 0.98,
+        "conflict_acc": 1.0
+      }
+    }
+  },
+  "F_adaptation": {
+    "curve": [
+      {
+        "decision_acc": 0.8704875702496077,
+        "sentence_acc": 0.464,
+        "conflict_acc": 0.6788377192982457,
+        "new_programs": 0,
+        "retrain_s": 4.23
+      },
+      {
+        "decision_acc": 0.9992405447825427,
+        "sentence_acc": 0.92,
+        "conflict_acc": 0.9957236842105263,
+        "new_programs": 5,
+        "retrain_s": 4.13
+      },
+      {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0,
+        "new_programs": 10,
+        "retrain_s": 4.43
+      },
+      {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0,
+        "new_programs": 25,
+        "retrain_s": 5.09
+      },
+      {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0,
+        "new_programs": 50,
+        "retrain_s": 4.61
+      },
+      {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0,
+        "new_programs": 100,
+        "retrain_s": 3.07
+      },
+      {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "conflict_acc": 1.0,
+        "new_programs": 500,
+        "retrain_s": 6.18
+      }
+    ],
+    "classical_table_rebuild_s": 0.0016438961029052734,
+    "classical_note": "table rebuild is instant but G2 has 2 LL(1) conflicts needing manual left-factoring"
+  },
+  "H_importance_conflict_points": {
+    "la2": 0.9359024976601943,
+    "parent": 0.03331812759792846,
+    "nt": 0.03077937474187729,
+    "la1": 0.0,
+    "la3": 0.0,
+    "prev": 0.0,
+    "brace": 0.0,
+    "paren": 0.0
+  }
+}

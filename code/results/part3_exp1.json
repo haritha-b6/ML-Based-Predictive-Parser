@@ -1,0 +1,125 @@
+{
+  "A_valid_program_acceptance": {
+    "G1": {
+      "classical_LL1": 1.0,
+      "ML_pure": 1.0,
+      "ML_guarded": 1.0,
+      "identical_parse_tree_vs_classical": 1.0
+    },
+    "G2": {
+      "classical_LL1(first-wins)": 0.4325,
+      "ML_pure": 1.0,
+      "ML_guarded": 1.0
+    }
+  },
+  "B_error_detection": {
+    "G1": {
+      "mutants": 600,
+      "invalid_mutants": 584,
+      "results": {
+        "classical_LL1": {
+          "agreement_with_oracle": 1.0,
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "exact_error_position": 1.0
+        },
+        "ML_pure": {
+          "agreement_with_oracle": 1.0,
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "exact_error_position": 0.863013698630137
+        },
+        "ML_guarded": {
+          "agreement_with_oracle": 1.0,
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "exact_error_position": 1.0
+        }
+      }
+    },
+    "G2": {
+      "mutants": 600,
+      "invalid_mutants": 577,
+      "results": {
+        "classical_LL1(first-wins)": {
+          "agreement_with_oracle": 0.9683333333333334,
+          "false_accepts": 0,
+          "false_rejects": 19,
+          "exact_error_position": 0.48353552859618715
+        },
+        "ML_pure": {
+          "agreement_with_oracle": 1.0,
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "exact_error_position": 0.9202772963604853
+        },
+        "ML_guarded": {
+          "agreement_with_oracle": 1.0,
+          "false_accepts": 0,
+          "false_rejects": 0,
+          "exact_error_position": 1.0
+        }
+      }
+    }
+  },
+  "C_recovery_G2": {
+    "ML_pure": {
+      "programs": 200,
+      "no_crash": 200,
+      "detected_any": 200,
+      "reported_errors": 286,
+      "injected_errors": 400,
+      "recovered_to_end": 172
+    },
+    "ML_guarded": {
+      "programs": 200,
+      "no_crash": 200,
+      "detected_any": 200,
+      "reported_errors": 253,
+      "injected_errors": 400,
+      "recovered_to_end": 196
+    }
+  },
+  "G_speed": {
+    "G1": {
+      "classical_LL1": {
+        "ms_per_program": 0.6063095000013163,
+        "tokens_per_sec": 140654.23682098804
+      },
+      "SLR(1)": {
+        "ms_per_program": 0.4256660000010015,
+        "tokens_per_sec": 200344.8713305722
+      },
+      "ML pure, no cache": {
+        "ms_per_program": 1738.817653333323,
+        "tokens_per_sec": 49.044820678302735
+      },
+      "ML pure, cached": {
+        "ms_per_program": 2.863187499997366,
+        "tokens_per_sec": 29784.986138727712
+      },
+      "ML guarded": {
+        "ms_per_program": 1.158221999999114,
+        "tokens_per_sec": 73630.09854765773
+      },
+      "pure cache hit rate": 0.9454900891071104,
+      "guarded model calls": 0
+    },
+    "G2": {
+      "ML guarded, no cache": {
+        "ms_per_program": 183.68452000001224,
+        "tokens_per_sec": 419.5508690661296
+      },
+      "ML guarded, cached": {
+        "ms_per_program": 1.210355499997604,
+        "tokens_per_sec": 63671.375889275965
+      },
+      "ML pure, cached": {
+        "ms_per_program": 1.6687289999981658,
+        "tokens_per_sec": 46181.85457320194
+      },
+      "guarded cache hit rate": 0.9617111600947016,
+      "guarded model calls (cold)": 469
+    }
+  }
+}

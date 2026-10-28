@@ -1,0 +1,9 @@
+Program -> StmtList
+StmtList -> StmtList Stmt | ε
+Stmt -> id = Expr ; | if ( Cond ) { StmtList } ElseOpt | while ( Cond ) { StmtList } | print ( Expr ) ;
+ElseOpt -> else { StmtList } | ε
+Cond -> Expr RelOp Expr
+RelOp -> < | > | == | !=
+Expr -> Expr + Term | Expr - Term | Term
+Term -> Term * Factor | Term / Factor | Factor
+Factor -> ( Expr ) | id | num

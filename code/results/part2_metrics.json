@@ -1,0 +1,97 @@
+{
+  "G1": {
+    "sentences": 2500,
+    "decisions": 319980,
+    "train_decisions": 258187,
+    "test_decisions": 61793,
+    "avg_tokens": 74.2668,
+    "productions": 25,
+    "ll1": true,
+    "classical_LL1": {
+      "decision_acc": 1.0,
+      "sentence_acc": 1.0
+    },
+    "models": {
+      "DecisionTree | F1 (nt, la1)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 1.4,
+        "infer_us_per_decision": 3.6
+      },
+      "DecisionTree | F2 (+la2)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 0.81,
+        "infer_us_per_decision": 3.0
+      },
+      "DecisionTree | F3 (full)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 2.05,
+        "infer_us_per_decision": 8.0
+      },
+      "RandomForest | F3 (full)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 20.47,
+        "infer_us_per_decision": 13.1
+      },
+      "MLP | F3 (full)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 46.39,
+        "infer_us_per_decision": 5.2
+      }
+    },
+    "classical_errors_by_context": {}
+  },
+  "G2": {
+    "sentences": 2500,
+    "decisions": 305142,
+    "train_decisions": 245889,
+    "test_decisions": 59253,
+    "avg_tokens": 72.5376,
+    "productions": 31,
+    "ll1": false,
+    "classical_LL1": {
+      "decision_acc": 0.8953301942517679,
+      "sentence_acc": 0.454
+    },
+    "models": {
+      "DecisionTree | F1 (nt, la1)": {
+        "decision_acc": 0.9507535483435438,
+        "sentence_acc": 0.492,
+        "train_s": 0.5,
+        "infer_us_per_decision": 3.5
+      },
+      "DecisionTree | F2 (+la2)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 0.82,
+        "infer_us_per_decision": 4.0
+      },
+      "DecisionTree | F3 (full)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 2.48,
+        "infer_us_per_decision": 5.6
+      },
+      "RandomForest | F3 (full)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 17.49,
+        "infer_us_per_decision": 14.9
+      },
+      "MLP | F3 (full)": {
+        "decision_acc": 1.0,
+        "sentence_acc": 1.0,
+        "train_s": 49.07,
+        "infer_us_per_decision": 6.9
+      }
+    },
+    "classical_errors_by_context": {
+      "Factor,id": 6125,
+      "Stmt,id": 77
+    }
+  }
+}

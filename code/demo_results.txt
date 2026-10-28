@@ -1,0 +1,261 @@
+ML-BASED PREDICTIVE PARSER — DEMONSTRATION RESULTS
+Run time: 2026-10-28T10:40:05+05:30
+Python: 3.14.7
+Project folder: C:\Users\SUDEEPA REDDY\Downloads\ML_Parser_Source_and_LaTeX\code
+============================================================================
+
+
+============================================================================
+RUNNING: test_part1.py
+============================================================================
+== LL grammar ==
+productions: 25 | nonterminals: 11 | terminals: 20 | LL(1): True
+FIRST(Stmt) = ['id', 'if', 'print', 'while'] | FOLLOW = ['$', 'id', 'if', 'print', 'while', '}']
+FIRST(Expr) = ['(', 'id', 'num'] | FOLLOW = ['!=', ')', ';', '<', '==', '>']
+FIRST(ExprT) = ['+', '-', 'ε'] | FOLLOW = ['!=', ')', ';', '<', '==', '>']
+FIRST(StmtList) = ['id', 'if', 'print', 'while', 'ε'] | FOLLOW = ['$', '}']
+LL(1) table cells: 56
+
+== LR grammar ==
+SLR states: 54 | ACTION entries: 248 | conflicts: 0
+
+== Acceptance test (LL(1) vs SLR) ==
+[OK ] LL=True  SLR=True   'x = 1 + 2 * 3;'
+[OK ] LL=True  SLR=True   'a = (b + c) * d - 4 / e;'
+[OK ] LL=True  SLR=True   'if (x < 10) { y = x + 1; } else { y = 0; }'
+[OK ] LL=True  SLR=True   'while (i != 5) { print(i); i = i + 1; }'
+[OK ] LL=True  SLR=True   ''
+[OK ] LL=False SLR=False  'x = ;'
+[OK ] LL=False SLR=False  'x = 1 + ;'
+[OK ] LL=False SLR=False  'if (x < ) { }'
+[OK ] LL=False SLR=False  'while x < 3 { }'
+[OK ] LL=False SLR=False  'x = (1 + 2;'
+[OK ] LL=False SLR=False  'print(x)'
+[OK ] LL=False SLR=False  'else { }'
+[OK ] LL=False SLR=False  'x = 1 2;'
+
+ALL CONSISTENT: True
+
+LL(1): steps = 24 | decisions = 15 | tree nodes = 27
+SLR  : steps = 21 | reductions = 12 | tree nodes = 21
+
+First expansions (trace):
+expand Program -> StmtList
+expand StmtList -> Stmt StmtList
+expand Stmt -> id = Expr ;
+expand Expr -> Term ExprT
+expand Term -> Factor TermT
+expand Factor -> num
+expand TermT -> ε
+expand ExprT -> + Term ExprT
+expand Term -> Factor TermT
+expand Factor -> num
+expand TermT -> ε
+expand ExprT -> ε
+expand StmtList -> ε
+
+COMPLETED: test_part1.py
+
+
+============================================================================
+RUNNING: train_part2.py
+============================================================================
+
+=== G1: 319980 decisions, LL(1)=True | classical table acc 1.0000 (sentence 1.0000)
+DecisionTree  F1 (nt, la1)   dec=1.0000 sent=1.0000 train=1.4s infer=3.6us
+DecisionTree  F2 (+la2)      dec=1.0000 sent=1.0000 train=0.81s infer=3.0us
+DecisionTree  F3 (full)      dec=1.0000 sent=1.0000 train=2.05s infer=8.0us
+RandomForest  F3 (full)      dec=1.0000 sent=1.0000 train=20.47s infer=13.1us
+MLP           F3 (full)      dec=1.0000 sent=1.0000 train=46.39s infer=5.2us
+
+=== G2: 305142 decisions, LL(1)=False | classical table acc 0.8953 (sentence 0.4540)
+DecisionTree  F1 (nt, la1)   dec=0.9508 sent=0.4920 train=0.5s infer=3.5us
+DecisionTree  F2 (+la2)      dec=1.0000 sent=1.0000 train=0.82s infer=4.0us
+DecisionTree  F3 (full)      dec=1.0000 sent=1.0000 train=2.48s infer=5.6us
+RandomForest  F3 (full)      dec=1.0000 sent=1.0000 train=17.49s infer=14.9us
+MLP           F3 (full)      dec=1.0000 sent=1.0000 train=49.07s infer=6.9us
+
+Saved: data/*.csv, models/*.joblib, results/part2_metrics.json
+
+COMPLETED: train_part2.py
+
+
+============================================================================
+RUNNING: part3_exp1.py
+============================================================================
+A: {
+ "G1": {
+  "classical_LL1": 1.0,
+  "ML_pure": 1.0,
+  "ML_guarded": 1.0,
+  "identical_parse_tree_vs_classical": 1.0
+ },
+ "G2": {
+  "classical_LL1(first-wins)": 0.4325,
+  "ML_pure": 1.0,
+  "ML_guarded": 1.0
+ }
+}
+B: {
+ "G1": {
+  "mutants": 600,
+  "invalid_mutants": 584,
+  "results": {
+   "classical_LL1": {
+    "agreement_with_oracle": 1.0,
+    "false_accepts": 0,
+    "false_rejects": 0,
+    "exact_error_position": 1.0
+   },
+   "ML_pure": {
+    "agreement_with_oracle": 1.0,
+    "false_accepts": 0,
+    "false_rejects": 0,
+    "exact_error_position": 0.863013698630137
+   },
+   "ML_guarded": {
+    "agreement_with_oracle": 1.0,
+    "false_accepts": 0,
+    "false_rejects": 0,
+    "exact_error_position": 1.0
+   }
+  }
+ },
+ "G2": {
+  "mutants": 600,
+  "invalid_mutants": 577,
+  "results": {
+   "classical_LL1(first-wins)": {
+    "agreement_with_oracle": 0.9683333333333334,
+    "false_accepts": 0,
+    "false_rejects": 19,
+    "exact_error_position": 0.48353552859618715
+   },
+   "ML_pure": {
+    "agreement_with_oracle": 1.0,
+    "false_accepts": 0,
+    "false_rejects": 0,
+    "exact_error_position": 0.9202772963604853
+   },
+   "ML_guarded": {
+    "agreement_with_oracle": 1.0,
+    "false_accepts": 0,
+    "false_rejects": 0,
+    "exact_error_position": 1.0
+   }
+  }
+ }
+}
+C: {'ML_pure': {'programs': 200, 'no_crash': 200, 'detected_any': 200, 'reported_errors': 286, 'injected_errors': 400, 'recovered_to_end': 172}, 'ML_guarded': {'programs': 200, 'no_crash': 200, 'detected_any': 200, 'reported_errors': 253, 'injected_errors': 400, 'recovered_to_end': 196}}
+G: {
+ "G1": {
+  "classical_LL1": {
+   "ms_per_program": 0.6063095000013163,
+   "tokens_per_sec": 140654.23682098804
+  },
+  "SLR(1)": {
+   "ms_per_program": 0.4256660000010015,
+   "tokens_per_sec": 200344.8713305722
+  },
+  "ML pure, no cache": {
+   "ms_per_program": 1738.817653333323,
+   "tokens_per_sec": 49.044820678302735
+  },
+  "ML pure, cached": {
+   "ms_per_program": 2.863187499997366,
+   "tokens_per_sec": 29784.986138727712
+  },
+  "ML guarded": {
+   "ms_per_program": 1.158221999999114,
+   "tokens_per_sec": 73630.09854765773
+  },
+  "pure cache hit rate": 0.9454900891071104,
+  "guarded model calls": 0
+ },
+ "G2": {
+  "ML guarded, no cache": {
+   "ms_per_program": 183.68452000001224,
+   "tokens_per_sec": 419.5508690661296
+  },
+  "ML guarded, cached": {
+   "ms_per_program": 1.210355499997604,
+   "tokens_per_sec": 63671.375889275965
+  },
+  "ML pure, cached": {
+   "ms_per_program": 1.6687289999981658,
+   "tokens_per_sec": 46181.85457320194
+  },
+  "guarded cache hit rate": 0.9617111600947016,
+  "guarded model calls (cold)": 469
+ }
+}
+
+COMPLETED: part3_exp1.py
+
+
+============================================================================
+RUNNING: part3_exp2.py
+============================================================================
+5 {'DT_F1': 0.478, 'DT_F2': 0.538, 'DT_F3': 0.506, 'MLP_F3': 0.446}
+10 {'DT_F1': 0.478, 'DT_F2': 0.602, 'DT_F3': 0.58, 'MLP_F3': 0.472}
+25 {'DT_F1': 0.478, 'DT_F2': 0.794, 'DT_F3': 0.762, 'MLP_F3': 0.814}
+50 {'DT_F1': 0.492, 'DT_F2': 0.916, 'DT_F3': 0.886, 'MLP_F3': 0.972}
+100 {'DT_F1': 0.492, 'DT_F2': 0.998, 'DT_F3': 0.994, 'MLP_F3': 0.994}
+250 {'DT_F1': 0.492, 'DT_F2': 0.998, 'DT_F3': 0.998, 'MLP_F3': 0.996}
+500 {'DT_F1': 0.492, 'DT_F2': 1.0, 'DT_F3': 1.0, 'MLP_F3': 1.0}
+2000 {'DT_F1': 0.492, 'DT_F2': 1.0, 'DT_F3': 1.0, 'MLP_F3': 1.0}
+E: {
+ "train_avg_decisions_per_program": 35.49,
+ "long_test_avg_decisions_per_program": 671.2333333333333,
+ "DT_F2": {
+  "short_test": {
+   "decision_acc": 1.0,
+   "sentence_acc": 1.0,
+   "conflict_acc": 1.0
+  },
+  "long_test": {
+   "decision_acc": 0.999970204101902,
+   "sentence_acc": 0.98,
+   "conflict_acc": 1.0
+  }
+ },
+ "DT_F3": {
+  "short_test": {
+   "decision_acc": 1.0,
+   "sentence_acc": 1.0,
+   "conflict_acc": 1.0
+  },
+  "long_test": {
+   "decision_acc": 0.999970204101902,
+   "sentence_acc": 0.98,
+   "conflict_acc": 1.0
+  }
+ },
+ "MLP_F3": {
+  "short_test": {
+   "decision_acc": 1.0,
+   "sentence_acc": 1.0,
+   "conflict_acc": 1.0
+  },
+  "long_test": {
+   "decision_acc": 0.999970204101902,
+   "sentence_acc": 0.98,
+   "conflict_acc": 1.0
+  }
+ }
+}
+F 0 {'decision_acc': 0.87, 'sentence_acc': 0.464, 'conflict_acc': 0.679, 'new_programs': 0, 'retrain_s': 4.23}
+F 5 {'decision_acc': 0.999, 'sentence_acc': 0.92, 'conflict_acc': 0.996, 'new_programs': 5, 'retrain_s': 4.13}
+F 10 {'decision_acc': 1.0, 'sentence_acc': 1.0, 'conflict_acc': 1.0, 'new_programs': 10, 'retrain_s': 4.43}
+F 25 {'decision_acc': 1.0, 'sentence_acc': 1.0, 'conflict_acc': 1.0, 'new_programs': 25, 'retrain_s': 5.09}
+F 50 {'decision_acc': 1.0, 'sentence_acc': 1.0, 'conflict_acc': 1.0, 'new_programs': 50, 'retrain_s': 4.61}
+F 100 {'decision_acc': 1.0, 'sentence_acc': 1.0, 'conflict_acc': 1.0, 'new_programs': 100, 'retrain_s': 3.07}
+F 500 {'decision_acc': 1.0, 'sentence_acc': 1.0, 'conflict_acc': 1.0, 'new_programs': 500, 'retrain_s': 6.18}
+table rebuild s: 0.0016438961029052734
+H: {'la2': 0.9359024976601943, 'parent': 0.03331812759792846, 'nt': 0.03077937474187729, 'la1': 0.0, 'la3': 0.0, 'prev': 0.0, 'brace': 0.0, 'paren': 0.0}
+
+COMPLETED: part3_exp2.py
+
+============================================================================
+ALL FOUR SCRIPTS COMPLETED SUCCESSFULLY.
+Full output saved to: C:\Users\SUDEEPA REDDY\Downloads\ML_Parser_Source_and_LaTeX\code\demo_results.txt
